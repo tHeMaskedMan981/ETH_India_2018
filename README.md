@@ -1,4 +1,4 @@
-# ETH_India_2018
+# ETH India 2018
 
 This is where it beginss!
 
