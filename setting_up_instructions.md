@@ -1,3 +1,1 @@
-
-
-#Starting with Ethereum development
+Starting with Ethereum development
