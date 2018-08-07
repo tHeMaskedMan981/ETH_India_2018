@@ -16,7 +16,7 @@ npm config rm https-proxy
 #### Installing Ganache-CLI:
 1. Type the following on the terminal: `npm install -g ganache-cli`
 
-#### Creating a TestNet with Geth:
+### Creating a TestNet with Geth:
 
 1. Create an empty folder to contain the TestNet (eg: "C:/XYZ/TestNet")
 2. create a `mygenesis.json` file with the parameters shown.
@@ -73,7 +73,9 @@ geth --data dir <path to your testnet directory> --networkid 12345 --rpc --rpcad
     If you are unable to attach to remote geth (Error: Invalid pipe address '...'), use `geth attach ipc:\\.\pipe\geth.ipc`
 13. Now you can carry all your transactions and run commands from this session. For making a transaction, each time the account should be unlocked using `personal.unlockAccount(‘<Your account address>’)`
 
-#### Creating a TestNet with Truffle:
+### Creating a TestNet with Truffle:
+
+#### The Beginning...
 1. Create a new folder and type `truffle init` on a command line window.
 2. Copy the contents of an a [Wrestling Smart Contract](https://github.com/devzl/ethereum-walkthrough-1/blob/master/Wrestling.sol, "smart contract") and save it in "contracts" folder.
 3. Open the folder “migrations” and create a new file named "2_deploy_contracts.js". Migrations are simply scripts that’ll help us deploy our contracts to a blockchain. Paste the following code inside, and save.
@@ -98,7 +100,8 @@ module.exports = {
   }
 };
 ```
-6. Fire a new command-line and type in the following command: `ganache-cli -p 7545`. Ganache will generate test accounts for us, they have 100 ether by default, and are unlocked so we can send ether from them freely. Ganache basically emulates the EVM here.
+#### Testing the Code...
+6. Fire a new command-line and type in the following command: `ganache-cli -p 7545`. Ganache will generate test accounts for us, they have 100 ether by default, and are unlocked so we can send ether from them freely. Ganache basically emulates the EVM (Ethereum Virtual Machine) here.
 7. On the first command-line interface, we execute two commands (On the command-line interface where ganache-cli is run, you can see the transactions being executed):
 ```
 truffle compile
