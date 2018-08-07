@@ -1,19 +1,24 @@
 ## Starting with Ethereum development
 
 #### Installing Geth:
+
+Geth is a multipurpose command line tool that runs a full Ethereum node implemented in Go. It offers three interfaces: the command line subcommands and options, a Json-rpc server and an interactive console. Is the core application on a computer that will connect one to a blockchain. It can also start a new local test blockchain, create contract, mine ether etc.
 1. Go to [link](https://geth.ethereum.org/downloads/) and download Geth for Windows/Linux.
 2. In Windows, go to Environment Variables and add “C:\Program Files\Geth” to the “Paths” variable under System Variables
 3. Type `geth version` on cmd to check if Geth is working or not.
 
 #### Installing Truffle:
+Truffle is a development environment, testing framework and asset pipeline for Ethereum. In other words, it helps you develop smart contracts, publish them, and test them, among other things.
 1. If you don’t have NODE.js, download it from [link](https://nodejs.org/en/) & install it.
-2. Use `npm install -g truffle` to install “Truffle”.
+2. Use `npm install -g truffle` to install “Truffle” (`npm` is the package manager for JavaScript and the world’s largest software registry).
 3. For `rollbackFailedOptional: verb npm-session xxxxxxx` error, unset the proxy using:
 ```
 npm config rm proxy
 npm config rm https-proxy
 ```
 #### Installing Ganache-CLI:
+
+Ganache creates a virtual Ethereum blockchain, and it generates some fake accounts that we will use during development.
 1. Type the following on the terminal: `npm install -g ganache-cli`
 
 ### Creating a TestNet with Geth:
@@ -77,7 +82,7 @@ geth --data dir <path to your testnet directory> --networkid 12345 --rpc --rpcad
 
 #### The Beginning...
 1. Create a new folder and type `truffle init` on a command line window.
-2. Copy the contents of an a [Wrestling Smart Contract](https://github.com/devzl/ethereum-walkthrough-1/blob/master/Wrestling.sol, "smart contract") and save it in "contracts" folder.
+2. Copy the contents of an a [Wrestling Smart Contract](https://github.com/devzl/ethereum-walkthrough-1/blob/master/Wrestling.sol) (any smart contract for that matter) and save it in "contracts" folder.
 3. Open the folder “migrations” and create a new file named "2_deploy_contracts.js". Migrations are simply scripts that’ll help us deploy our contracts to a blockchain. Paste the following code inside, and save.
 ```
 const Wrestling = artifacts.require("./Wrestling.sol")
